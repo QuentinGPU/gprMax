@@ -1062,3 +1062,19 @@ def process_multicmds(multicmds, G):
                         v.start = start
                         v.stop = stop
                         v.calculate_waveform_values(G)
+
+    cmdname = "#Symmetry"
+    if multicmds[cmdname] is not None:
+        for cmdinstance in multicmds[cmdname]:
+            tmp = cmdinstance.split()
+            if len(tmp) != 1 or len(tmp) != 2:
+                raise CmdInputError(cmdname + ' '.join(cmdinstance) + " must have at least one parameter and at most two parameters (direction and phase)")
+            if tmp[0] not in ['x', 'y', 'z']:
+                raise CmdInputError(cmdname + ' '.join(cmdinstance) + " must descirbe a symmetry along the x, y or z axis.")
+            direction = tmp[0]
+            phase = 1
+            if len(tmp) == 2: phase = float(tmp[1])
+            if direction in G.symmetries_direction.append(direction):
+                raise CmdInputError("We can only have one symmetry per direction !")
+            G.symmetries_direction.append(direction)
+            G.symmetries.append(Symmetry(G, direction, phase))

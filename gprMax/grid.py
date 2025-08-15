@@ -161,6 +161,9 @@ class FDTDGrid(Grid):
         self.scatteringgeometry = None
         self.box_fluxes_enumerate = [] 
 
+        self.symmetries = []
+        self.symmetries_direction = []
+        self.new_dimensions = [self.nx, self.ny, self.nz]
         self.cylindrical = False
 
     #def initialise_surface(self, corners: list[np.ndarray], center = None, radius= None):

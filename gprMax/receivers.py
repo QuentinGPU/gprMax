@@ -43,6 +43,8 @@ class Rx(object):
         self.ycoordorigin = None
         self.zcoordorigin = None
 
+        self.outside_planes = []
+
         self.rcoord_cyl = None
         self.phicoord_cyl = None
         self.zcoord_cyl = None

@@ -197,7 +197,8 @@ def check_cmd_names(processedlines, checkessential=True):
 
     # Commands that there can be multiple instances of in a model - these will be lists within the dictionary
     multiplecmds = {key: [] for key in ['#geometry_view', '#geometry_objects_write', '#material', '#soil_peplinski', '#add_dispersion_debye', '#add_dispersion_lorentz', '#add_dispersion_drude', '#waveform', '#voltage_source', '#hertzian_dipole', '#magnetic_dipole', '#transmission_line', '#rx', '#rx_array', '#snapshot', '#pml_cfs', '#include_file'
-                                        , '#flux', '#box_flux', '#plane_voltage_source']}
+                                        , '#flux', '#box_flux', '#plane_voltage_source'
+                                        , '#Symmetry']}
 
 
     # Geometry object building commands that there can be multiple instances
